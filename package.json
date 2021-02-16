@@ -1,0 +1,17 @@
+{
+  "name": "eth-election",
+  "version": "0.0.1",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "author": "Padelis Theodosiou <padelis.theodosiou@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
