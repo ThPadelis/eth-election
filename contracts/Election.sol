@@ -16,6 +16,8 @@ contract Election {
     // Store candidates count
     uint256 public candidatesCount;
 
+    event VotedEvent(uint256 _candidateId);
+
     // Constructor
     constructor() {
         addCandidate("Padelis Theodosiou");
@@ -44,5 +46,8 @@ contract Election {
 
         // Update candidate
         candidates[_candidateId].voteCount++;
+
+        // Fire voted event
+        emit VotedEvent(_candidateId);
     }
 }

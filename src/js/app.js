@@ -27,27 +27,29 @@ App = {
       App.contracts.Election = TruffleContract(election);
       // Connect provider to interact with contract
       App.contracts.Election.setProvider(App.web3Provider);
-      // App.listenForEvents();
+
+      App.listenForEvents();
+
       return App.render();
     });
   },
 
   // Listen for events emitted from the contract
-  // listenForEvents: () => {
-  //   App.contracts.Election.deployed().then((instance) => {
-  //     // Restart Chrome if you are unable to receive this event
-  //     // This is a known issue with Metamask
-  //     // https://github.com/MetaMask/metamask-extension/issues/2393
-  //     instance.votedEvent({}, {
-  //       fromBlock: 0,
-  //       toBlock: 'latest'
-  //     }).watch((error, event) => {
-  //       console.log("event triggered", event)
-  //       // Reload when a new vote is recorded
-  //       App.render();
-  //     });
-  //   });
-  // },
+  listenForEvents: () => {
+    App.contracts.Election.deployed().then((instance) => {
+      // Restart Chrome if you are unable to receive this event
+      // This is a known issue with Metamask
+      // https://github.com/MetaMask/metamask-extension/issues/2393
+      instance.VotedEvent({}, {
+        fromBlock: 0,
+        toBlock: 'latest'
+      }).watch((error, event) => {
+        console.log("event triggered", event)
+        // Reload when a new vote is recorded
+        App.render();
+      });
+    });
+  },
 
   render: () => {
     let meta;
