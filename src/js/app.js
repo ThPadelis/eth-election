@@ -63,7 +63,7 @@ App = {
     web3.eth.getCoinbase((err, account) => {
       if (err === null) {
         App.account = account;
-        $("#accountAddress").html("Your Account: " + account);
+        $("#accountAddress").text(account);
       } else {
         console.error({ error: err });
       }
@@ -87,7 +87,7 @@ App = {
           let voteCount = candidate[2];
 
           // Render candidate Result
-          let candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
+          let candidateTemplate = `<tr><th class='text-center'>${id}</th><td>${name}</td><td>${voteCount}</td></tr>`;
           candidatesResults.append(candidateTemplate);
 
           // Render candidate ballot option
@@ -110,16 +110,47 @@ App = {
 
   castVote: () => {
     let candidateId = $('#candidatesSelect').val();
+    $("#content").hide();
+    $("#loader").show();
+
     App.contracts.Election.deployed().then((instance) => {
       return instance.vote(candidateId, { from: App.account });
     }).then((result) => {
-      console.log({ result });
-      // Wait for votes to update
-      $("#content").hide();
-      $("#loader").show();
+      App.showAlert("Your vote has been submitted. ", "success");
     }).catch((err) => {
-      console.error(err);
-    });
+      const message = err.message.split(":")[1].trim();
+      App.showAlert(message, "error");
+    }).finally(() => {
+      $("#loader").hide();
+      $("#content").show();
+    })
+  },
+
+  showAlert: (message, type = "success" | "error" | "default", timer = 3000) => {
+    const successAlertEl = $("#alert-success");
+    const errorAlertEl = $("#alert-error");
+    const defaultAlertEl = $("#alert-default");
+
+    switch (type) {
+      case "success":
+        successAlertEl.text(message).show();
+        setTimeout(() => {
+          successAlertEl.hide();
+        }, timer);
+        break;
+      case "error":
+        errorAlertEl.text(message).show();
+        setTimeout(() => {
+          errorAlertEl.hide();
+        }, timer);
+        break
+      default:
+        defaultAlertEl.text(message).show();
+        setTimeout(() => {
+          defaultAlertEl.hide();
+        }, timer);
+        break;
+    }
   }
 };
 

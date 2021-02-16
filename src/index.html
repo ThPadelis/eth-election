@@ -9,7 +9,15 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,53 +25,129 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="container" style="width: 650px">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-center">Election Results</h1>
-          <hr />
-          <br />
-          <div id="loader">
-            <p class="text-center">Loading...</p>
+  <body class="">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <a class="navbar-brand font-weight-bold" href="/">
+        <span>Eth</span><span class="text-secondary">Election</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item navbar-text d-flex align-items-center">
+            <span class="mr-1">Your account</span>
+            <span id="accountAddress" class="font-weight-bold"></span>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://github.com/ThPadelis"
+              target="_blank"
+              rel="nofollow"
+            >
+              <span class="fab fa-github"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Alerts -->
+    <div
+      class="alert alert-primary"
+      style="display: none"
+      role="alert"
+      id="alert-success"
+    ></div>
+    <div
+      class="alert alert-danger"
+      style="display: none"
+      role="alert"
+      id="alert-error"
+    ></div>
+    <div
+      class="alert alert-dark"
+      style="display: none"
+      role="alert"
+      id="alert-default"
+    ></div>
+
+    <!-- Main -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-10 col-lg-7 col-xl-7">
+          <h1 class="text-center display-4 my-5">Election Results</h1>
+          <div id="loader" class="loading-spinner">
+            <div class="sk-folding-cube">
+              <div class="sk-cube1 sk-cube"></div>
+              <div class="sk-cube2 sk-cube"></div>
+              <div class="sk-cube4 sk-cube"></div>
+              <div class="sk-cube3 sk-cube"></div>
+            </div>
           </div>
           <div id="content" style="display: none">
-            <table class="table">
+            <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col" class="text-center">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Votes</th>
                 </tr>
               </thead>
               <tbody id="candidatesResults"></tbody>
             </table>
-            <hr />
+
             <form onSubmit="App.castVote(); return false;">
               <div class="form-group">
-                <label for="candidatesSelect">Select Candidate</label>
+                <label
+                  for="candidatesSelect"
+                  class="col-form-label font-weight-bold"
+                  >Select Candidate</label
+                >
                 <select class="form-control" id="candidatesSelect"></select>
               </div>
-              <button type="submit" class="btn btn-primary">Vote</button>
-              <hr />
+              <div class="w-25">
+                <button type="submit" class="btn btn-secondary btn-block">
+                  Vote
+                </button>
+              </div>
             </form>
-            <p id="accountAddress" class="text-center"></p>
+
+            <!-- <p id="accountAddress" class="text-center"></p> -->
           </div>
         </div>
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- PopperJs -->
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
       crossorigin="anonymous"
     ></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Boostrap -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Web3 -->
     <script src="js/web3.min.js"></script>
+    <!-- Truffle Contract -->
     <script src="js/truffle-contract.js"></script>
+    <!-- Custom script -->
     <script src="js/app.js"></script>
   </body>
 </html>
