@@ -1,13 +1,28 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.4.22 <0.9.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.16 <0.9.0;
 
 contract Election {
-    // Store candidate
-    // Read candidate
-    string public candidate;
+    // Model a candidate
+    struct Candidate {
+        uint256 id;
+        string name;
+        uint256 voteCount;
+    }
+
+    // Store candidates
+    mapping(uint256 => Candidate) public candidates;
+    // Store candidates count
+    uint256 public candidatesCount;
 
     // Constructor
     constructor() {
-        candidate = "Candidate 1";
+        addCandidate("Padelis Theodosiou");
+        addCandidate("Jonh Doe");
+    }
+
+    // Add a candidate
+    function addCandidate(string memory _name) private {
+        candidatesCount++;
+        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 }

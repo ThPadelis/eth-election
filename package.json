@@ -12,6 +12,8 @@
   "author": "Padelis Theodosiou <padelis.theodosiou@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "chai": "^4.3.0",
+    "lite-server": "^2.3.0",
+    "mocha": "^8.3.0"
   }
 }

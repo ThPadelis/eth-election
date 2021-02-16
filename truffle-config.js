@@ -13,7 +13,13 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: "0.8.1"  // ex:  "0.4.20". (Default: Truffle's installed solc)
+      version: "0.8.1", // ex:  "0.4.20". (Default: Truffle's installed solc)
+      parser: "solcjs",
+      settings: {
+        optimizer: {
+          enabled: true
+        }
+      }
     }
   }
 };
