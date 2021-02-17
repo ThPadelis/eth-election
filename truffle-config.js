@@ -12,9 +12,6 @@ module.exports = {
       port: 7545,
       network_id: "5777" // "*" Match any network id
     },
-    // develop: {
-    //   port: 8545
-    // }
     rinkeby: {
       provider: function () {
         return new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${projectId}`);
