@@ -7,13 +7,20 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "lite-server"
+    "dev": "lite-server",
+    "build": "node build.js",
+    "deploy": "sh deploy.sh"
   },
   "author": "Padelis Theodosiou <padelis.theodosiou@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.0",
+    "fs-extra": "^9.1.0",
     "lite-server": "^2.3.0",
     "mocha": "^8.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "truffle-hdwallet-provider": "^1.0.17"
   }
 }
