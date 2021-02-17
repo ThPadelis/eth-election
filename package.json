@@ -9,6 +9,10 @@
   "scripts": {
     "dev": "lite-server",
     "build": "node build.js",
+    "migrate:local": "truffle migrate --network development --reset --compile-all",
+    "migrate:rinkeby": "truffle migrate --network rinkeby --reset --compile-all",
+    "migrate:kovan": "truffle migrate --network kovan --reset --compile-all",
+    "migrate:goerli": "truffle migrate --network goerli --reset --compile-all",
     "deploy": "sh deploy.sh"
   },
   "author": "Padelis Theodosiou <padelis.theodosiou@gmail.com>",
