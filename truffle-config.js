@@ -12,29 +12,43 @@ module.exports = {
       port: 7545,
       network_id: "5777" // "*" Match any network id
     },
-    rinkeby: {
+    mainnet: {
       provider: function () {
-        return new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${projectId}`);
+        return new HDWalletProvider(mnemonic, `https://mainnet.infura.io/v3/${projectId}`);
       },
-      network_id: 4,
-      gas: 4500000,
-      gasPrice: 10000000000,
+      network_id: 1,
+    },
+    ropsten: {
+      provider: function () {
+        return new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${projectId}`);
+      },
+      network_id: 3,
     },
     kovan: {
       provider: function () {
         return new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/${projectId}`);
       },
       network_id: 42,
-      gas: 0,
-      gasPrice: 10000000000,
+    },
+    rinkeby: {
+      provider: function () {
+        return new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${projectId}`);
+      },
+      network_id: 4,
     },
     goerli: {
       provider: function () {
         return new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${projectId}`);
       },
       network_id: 5,
-      gas: 4500000,
-      gasPrice: 10000000000,
+    },
+    alastria: {
+      provider: function () {
+        return new HDWalletProvider(mnemonic, `<Insert alastria's url here>`);
+      },
+      network_id: "*",
+      gasPrice: 0,
+      type: "quorum"
     }
   },
   compilers: {
