@@ -2,9 +2,7 @@
 
 ## Description
 
-[EthElection](https://github.com/ThPadelis/eth-election) is a simple contract that keeps the votes in the blockchain.
-
-EthElection is a free and open-source starter template that helps you get started on Blockchain development.
+[EthElection](https://github.com/ThPadelis/eth-election) is a free and open-source starter template that helps you get started on Blockchain development. It contains an Election contract that keeps the votes for the candidates.
 
 ## Demo
 
@@ -30,6 +28,7 @@ EthElection is a free and open-source starter template that helps you get starte
 - Surge - `npm install --global surge` - Read [here](https://surge.sh/help/getting-started-with-surge) for set up
 
 ### Installation
+
 1. Clone the repository
 
    ```bash
@@ -89,8 +88,8 @@ EthElection is a free and open-source starter template that helps you get starte
      npm run migrate:ropsten # or
      npm run migrate:kovan   # or
      npm run migrate:rinkeby # or
-     npm run migrate:goerli  
-     # deploy ui application 
+     npm run migrate:goerli
+     # deploy ui application
      npm run deploy:surge    # or
      npm run deploy:github   # you will need to edit the deploy.sh file
      ```
