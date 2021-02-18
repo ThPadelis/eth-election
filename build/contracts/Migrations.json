@@ -43,9 +43,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"last_completed_migration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"completed\",\"type\":\"uint256\"}],\"name\":\"setCompleted\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/ptheodosiou/Documents/Work/Trublo/election/contracts/Migrations.sol\":\"Migrations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/ptheodosiou/Documents/Work/Trublo/election/contracts/Migrations.sol\":{\"keccak256\":\"0xdf98f74740353047789f55eb3d93ee62f2e345ffef68190a1df49a32aa18152f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d9b5d0d1b8f92e8b7093dd60c7147ca9097d3c6918d499562df2e8528f00e933\",\"dweb:/ipfs/QmeAD3xGPYb4wLSmGqgTs6ZsMAaUrtHP6y7VUHmb9jUG6P\"]}},\"version\":1}",
-  "bytecode": "0x6080604052600080546001600160a01b0319163317905534801561002257600080fd5b50610199806100326000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063445df0ac146100465780638da5cb5b14610064578063fdacd57614610079575b600080fd5b61004e61008e565b60405161005b919061015a565b60405180910390f35b61006c610094565b60405161005b91906100f3565b61008c6100873660046100db565b6100a3565b005b60015481565b6000546001600160a01b031681565b6000546001600160a01b031633146100d65760405162461bcd60e51b81526004016100cd90610107565b60405180910390fd5b600155565b6000602082840312156100ec578081fd5b5035919050565b6001600160a01b0391909116815260200190565b60208082526033908201527f546869732066756e6374696f6e206973207265737472696374656420746f207460408201527234329031b7b73a3930b1ba13b99037bbb732b960691b606082015260800190565b9081526020019056fea2646970667358221220f59d386710740a1a184bdf6741070ee105a8cb2b97a09f1875e9107b97adce9d64736f6c63430008010033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063445df0ac146100465780638da5cb5b14610064578063fdacd57614610079575b600080fd5b61004e61008e565b60405161005b919061015a565b60405180910390f35b61006c610094565b60405161005b91906100f3565b61008c6100873660046100db565b6100a3565b005b60015481565b6000546001600160a01b031681565b6000546001600160a01b031633146100d65760405162461bcd60e51b81526004016100cd90610107565b60405180910390fd5b600155565b6000602082840312156100ec578081fd5b5035919050565b6001600160a01b0391909116815260200190565b60208082526033908201527f546869732066756e6374696f6e206973207265737472696374656420746f207460408201527234329031b7b73a3930b1ba13b99037bbb732b960691b606082015260800190565b9081526020019056fea2646970667358221220f59d386710740a1a184bdf6741070ee105a8cb2b97a09f1875e9107b97adce9d64736f6c63430008010033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"last_completed_migration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"completed\",\"type\":\"uint256\"}],\"name\":\"setCompleted\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/ptheodosiou/Documents/GitHub/eth-election/contracts/Migrations.sol\":\"Migrations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/ptheodosiou/Documents/GitHub/eth-election/contracts/Migrations.sol\":{\"keccak256\":\"0xdf98f74740353047789f55eb3d93ee62f2e345ffef68190a1df49a32aa18152f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d9b5d0d1b8f92e8b7093dd60c7147ca9097d3c6918d499562df2e8528f00e933\",\"dweb:/ipfs/QmeAD3xGPYb4wLSmGqgTs6ZsMAaUrtHP6y7VUHmb9jUG6P\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600080546001600160a01b0319163317905534801561002257600080fd5b50610199806100326000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063445df0ac146100465780638da5cb5b14610064578063fdacd57614610079575b600080fd5b61004e61008e565b60405161005b919061015a565b60405180910390f35b61006c610094565b60405161005b91906100f3565b61008c6100873660046100db565b6100a3565b005b60015481565b6000546001600160a01b031681565b6000546001600160a01b031633146100d65760405162461bcd60e51b81526004016100cd90610107565b60405180910390fd5b600155565b6000602082840312156100ec578081fd5b5035919050565b6001600160a01b0391909116815260200190565b60208082526033908201527f546869732066756e6374696f6e206973207265737472696374656420746f207460408201527234329031b7b73a3930b1ba13b99037bbb732b960691b606082015260800190565b9081526020019056fea2646970667358221220c7f972eeaef1ca3b46637d463a9e7fe62992096fdba62e7265b9ebe0e5dcd6ad64736f6c63430008010033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063445df0ac146100465780638da5cb5b14610064578063fdacd57614610079575b600080fd5b61004e61008e565b60405161005b919061015a565b60405180910390f35b61006c610094565b60405161005b91906100f3565b61008c6100873660046100db565b6100a3565b005b60015481565b6000546001600160a01b031681565b6000546001600160a01b031633146100d65760405162461bcd60e51b81526004016100cd90610107565b60405180910390fd5b600155565b6000602082840312156100ec578081fd5b5035919050565b6001600160a01b0391909116815260200190565b60208082526033908201527f546869732066756e6374696f6e206973207265737472696374656420746f207460408201527234329031b7b73a3930b1ba13b99037bbb732b960691b606082015260800190565b9081526020019056fea2646970667358221220c7f972eeaef1ca3b46637d463a9e7fe62992096fdba62e7265b9ebe0e5dcd6ad64736f6c63430008010033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [
@@ -665,9 +665,9 @@
   "sourceMap": "66:398:1:-:0;;;92:33;;;-1:-1:-1;;;;;;92:33:1;115:10;92:33;;;66:398;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "66:398:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;131:39;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;92:33;;;:::i;:::-;;;;;;;:::i;350:112::-;;;;;;:::i;:::-;;:::i;:::-;;131:39;;;;:::o;92:33::-;;;-1:-1:-1;;;;;92:33:1;;:::o;350:112::-;244:5;;-1:-1:-1;;;;;244:5:1;230:10;:19;209:117;;;;-1:-1:-1;;;209:117:1;;;;;;;:::i;:::-;;;;;;;;;419:24:::1;:36:::0;350:112::o;14:190:2:-;;126:2;114:9;105:7;101:23;97:32;94:2;;;147:6;139;132:22;94:2;-1:-1:-1;175:23:2;;84:120;-1:-1:-1;84:120:2:o;209:203::-;-1:-1:-1;;;;;373:32:2;;;;355:51;;343:2;328:18;;310:102::o;417:415::-;619:2;601:21;;;658:2;638:18;;;631:30;697:34;692:2;677:18;;670:62;-1:-1:-1;;;763:2:2;748:18;;741:49;822:3;807:19;;591:241::o;837:177::-;983:25;;;971:2;956:18;;938:76::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.16 <0.9.0;\n\ncontract Migrations {\n    address public owner = msg.sender;\n    uint256 public last_completed_migration;\n\n    modifier restricted() {\n        require(\n            msg.sender == owner,\n            \"This function is restricted to the contract's owner\"\n        );\n        _;\n    }\n\n    function setCompleted(uint256 completed) public restricted {\n        last_completed_migration = completed;\n    }\n}\n",
-  "sourcePath": "C:/Users/ptheodosiou/Documents/Work/Trublo/election/contracts/Migrations.sol",
+  "sourcePath": "C:/Users/ptheodosiou/Documents/GitHub/eth-election/contracts/Migrations.sol",
   "ast": {
-    "absolutePath": "/C/Users/ptheodosiou/Documents/Work/Trublo/election/contracts/Migrations.sol",
+    "absolutePath": "/C/Users/ptheodosiou/Documents/GitHub/eth-election/contracts/Migrations.sol",
     "exportedSymbols": {
       "Migrations": [
         131
@@ -1055,7 +1055,7 @@
     "src": "32:433:1"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/ptheodosiou/Documents/Work/Trublo/election/contracts/Migrations.sol",
+    "absolutePath": "/C/Users/ptheodosiou/Documents/GitHub/eth-election/contracts/Migrations.sol",
     "exportedSymbols": {
       "Migrations": [
         131
@@ -1462,12 +1462,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x790A06f96305ad29785bA280174311acd7DeE696",
-      "transactionHash": "0x283cb269658ab78242e1c403b27d2461298c9d61c514f893972c1791770438e7"
+      "address": "0x8B6bb1d051eEDd38820aE4FC6Ae47Ff8eCaECa35",
+      "transactionHash": "0x2dad6cbc26873467ae3ab2adad2ba0e7ec01faef4c59cc730f75e230013fd784"
     }
   },
   "schemaVersion": "3.3.4",
-  "updatedAt": "2021-02-17T14:09:03.437Z",
+  "updatedAt": "2021-02-18T08:38:14.320Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
