@@ -9,7 +9,7 @@ contract("Election", (accounts) => {
             .then((instance) => instance.candidatesCount())
             .then((count) => {
                 const c = count.toNumber();
-                assert.equal(c, 2)
+                assert.equal(c, 4)
             }).catch()
     });
 
@@ -24,7 +24,7 @@ contract("Election", (accounts) => {
                 const name = candidate[1];
                 const votes = candidate[2].toNumber();
                 assert.equal(id, 1, "contains the correct id");
-                assert.equal(name, "Padelis Theodosiou", "contains the corrent name");
+                assert.equal(name, "Jane Doe", "contains the corrent name");
                 assert.equal(votes, 0, "contains the corrent votes count");
                 return meta.candidates(2);
             })
@@ -34,7 +34,7 @@ contract("Election", (accounts) => {
                 const votes = candidate[2].toNumber();
 
                 assert.equal(id, 2, "contains the correct id");
-                assert.equal(name, "Jonh Doe", "contains the corrent name");
+                assert.equal(name, "John Doe", "contains the corrent name");
                 assert.equal(votes, 0, "contains the corrent votes count");
             })
     });
@@ -46,7 +46,7 @@ contract("Election", (accounts) => {
             return meta.vote(candidateId, { from: accounts[0] });
         }).then((receipt) => {
             assert.equal(receipt.logs.length, 1, "an event was triggered");
-            assert.equal(receipt.logs[0].event, "votedEvent", "the event type is correct");
+            assert.equal(receipt.logs[0].event, "VotedEvent", "the event type is correct");
             assert.equal(receipt.logs[0].args._candidateId.toNumber(), candidateId, "the candidate id is correct");
             return meta.voters(accounts[0]);
         }).then((voted) => {
