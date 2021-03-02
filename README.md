@@ -20,10 +20,16 @@
 
 ## Getting Started
 
+### Environment
+
+- Node version - `14.15.4`
+- Truffle version - `4.1.17`
+- Solidity version - `0.4.26`
+
 ### Prerequisites
 
 - Node - Download [here](https://nodejs.org/en/download/)
-- Truffle - `npm install -g truffle`
+- Truffle - `npm install -g truffle@4.1.17`
 - Ganache - Download [here](https://www.trufflesuite.com/ganache)
 - Surge - `npm install --global surge` - Read [here](https://surge.sh/help/getting-started-with-surge) for set up
 

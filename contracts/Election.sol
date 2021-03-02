@@ -20,8 +20,10 @@ contract Election {
 
     // Constructor
     constructor() {
-        addCandidate("Padelis Theodosiou");
-        addCandidate("Jonh Doe");
+        addCandidate("Jane Doe");
+        addCandidate("John Doe");
+        addCandidate("Larry Loe");
+        addCandidate("Paula Poe");
     }
 
     // Add a candidate

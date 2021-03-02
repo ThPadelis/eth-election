@@ -2,12 +2,12 @@
   "name": "eth-election",
   "version": "0.0.1",
   "description": "",
-  "main": "truffle.js",
+  "main": "truffle-config.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "dev": "lite-server",
+    "serve": "lite-server",
     "build": "node build.js",
     "migrate:local": "truffle migrate --network development --reset --compile-all",
     "migrate:mainnet": "truffle migrate --network mainnet --reset --compile-all",
