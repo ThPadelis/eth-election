@@ -53,12 +53,7 @@
 
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://github.com/ThPadelis"
-              target="_blank"
-              rel="nofollow"
-            >
+            <a class="nav-link" href="https://github.com/ThPadelis" target="_blank" rel="nofollow">
               <span class="fab fa-github"></span>
             </a>
           </li>
@@ -67,24 +62,9 @@
     </nav>
 
     <!-- Alerts -->
-    <div
-      class="alert alert-primary"
-      style="display: none"
-      role="alert"
-      id="alert-success"
-    ></div>
-    <div
-      class="alert alert-danger"
-      style="display: none"
-      role="alert"
-      id="alert-error"
-    ></div>
-    <div
-      class="alert alert-dark"
-      style="display: none"
-      role="alert"
-      id="alert-default"
-    ></div>
+    <div class="alert alert-primary" style="display: none" role="alert" id="alert-success"></div>
+    <div class="alert alert-danger" style="display: none" role="alert" id="alert-error"></div>
+    <div class="alert alert-dark" style="display: none" role="alert" id="alert-default"></div>
 
     <!-- Main -->
     <div class="container">
@@ -113,17 +93,11 @@
 
             <form onSubmit="App.castVote(); return false;">
               <div class="form-group">
-                <label
-                  for="candidatesSelect"
-                  class="col-form-label font-weight-bold"
-                  >Select Candidate</label
-                >
+                <label for="candidatesSelect" class="col-form-label font-weight-bold">Select Candidate</label>
                 <select class="form-control" id="candidatesSelect"></select>
               </div>
               <div class="w-25">
-                <button type="submit" class="btn btn-secondary btn-block">
-                  Vote
-                </button>
+                <button type="submit" class="btn btn-secondary btn-block">Vote</button>
               </div>
             </form>
 

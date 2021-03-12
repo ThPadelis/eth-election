@@ -2,11 +2,11 @@
 
 ## Description
 
-[EthElection](https://github.com/ThPadelis/eth-election) is a free and open-source starter template that helps you get started on Blockchain development. It contains an Election contract that keeps the votes for the candidates.
+[EthElection](https://gitlab.com/atceng/ilab/trublo/blockchain-tools) is a free and open-source starter template that helps you get started on Blockchain development. It contains an Election contract that keeps the votes for the candidates.
 
 ## Demo
 
-- [Live demo](https://thpadelis.github.io/eth-election/)
+- [Live demo](https://eth-election.surge.sh/)
 
 ## Built With
 
@@ -38,7 +38,7 @@
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/ThPadelis/eth-election.git
+   git clone https://gitlab.com/atceng/ilab/trublo/blockchain-tools.git
    ```
 
 2. Install NPM packages
@@ -97,12 +97,11 @@
      npm run migrate:goerli
      # deploy ui application
      npm run deploy:surge    # or
-     npm run deploy:github   # you will need to edit the deploy.sh file
      ```
 
 ## Roadmap
 
-See the [open issues](https://github.com/ThPadelis/eth-election/issues) for a list of proposed features (and known issues).
+See the [open issues](https://gitlab.com/atceng/ilab/trublo/blockchain-tools/-/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 

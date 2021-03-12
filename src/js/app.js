@@ -1,7 +1,7 @@
 App = {
   web3Provider: null,
   contracts: {},
-  account: '0x0',
+  account: "0x0",
   hasVoted: false,
 
   init: () => {
@@ -12,17 +12,17 @@ App = {
     try {
       if (window.ethereum) {
         // Modern browsers
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const accounts = await ethereum.request({ method: "eth_requestAccounts" });
         App.web3Provider = ethereum;
         web3 = new Web3(ethereum);
-      } else if (typeof web3 !== 'undefined') {
+      } else if (typeof web3 !== "undefined") {
         // Legacy browsers
         // If a web3 instance is already provided by Meta Mask.
         App.web3Provider = web3.currentProvider;
         web3 = new Web3(web3.currentProvider);
       } else {
         // Specify default instance if no web3 instance provided
-        App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+        App.web3Provider = new Web3.providers.HttpProvider("http://localhost:7545");
         web3 = new Web3(App.web3Provider);
       }
       return App.initContract();
@@ -50,14 +50,19 @@ App = {
       // Restart Chrome if you are unable to receive this event
       // This is a known issue with Metamask
       // https://github.com/MetaMask/metamask-extension/issues/2393
-      instance.VotedEvent({}, {
-        fromBlock: 0,
-        toBlock: 'latest'
-      }).watch((error, event) => {
-        console.log("event triggered", event)
-        // Reload when a new vote is recorded
-        App.render();
-      });
+      instance
+        .VotedEvent(
+          {},
+          {
+            fromBlock: 0,
+            toBlock: "latest"
+          }
+        )
+        .watch((error, event) => {
+          console.log("event triggered", event);
+          // Reload when a new vote is recorded
+          App.render();
+        });
     });
   },
 
@@ -80,60 +85,68 @@ App = {
     });
 
     // Load contract data
-    App.contracts.Election.deployed().then((instance) => {
-      meta = instance;
-      return meta.candidatesCount();
-    }).then((candidatesCount) => {
-      let candidatesResults = $("#candidatesResults");
-      candidatesResults.empty();
+    App.contracts.Election.deployed()
+      .then((instance) => {
+        meta = instance;
+        return meta.candidatesCount();
+      })
+      .then((candidatesCount) => {
+        let candidatesResults = $("#candidatesResults");
+        candidatesResults.empty();
 
-      let candidatesSelect = $('#candidatesSelect');
-      candidatesSelect.empty();
+        let candidatesSelect = $("#candidatesSelect");
+        candidatesSelect.empty();
 
-      for (let i = 1; i <= candidatesCount; i++) {
-        meta.candidates(i).then((candidate) => {
-          let id = candidate[0];
-          let name = candidate[1];
-          let voteCount = candidate[2];
+        for (let i = 1; i <= candidatesCount; i++) {
+          meta.candidates(i).then((candidate) => {
+            let id = candidate[0];
+            let name = candidate[1];
+            let voteCount = candidate[2];
 
-          // Render candidate Result
-          let candidateTemplate = `<tr><th class='text-center'>${id}</th><td>${name}</td><td>${voteCount}</td></tr>`;
-          candidatesResults.append(candidateTemplate);
+            // Render candidate Result
+            let candidateTemplate = `<tr><th class='text-center'>${id}</th><td>${name}</td><td>${voteCount}</td></tr>`;
+            candidatesResults.append(candidateTemplate);
 
-          // Render candidate ballot option
-          let candidateOption = "<option value='" + id + "' >" + name + "</ option>"
-          candidatesSelect.append(candidateOption);
-        });
-      }
-      return meta.voters(App.account);
-    }).then((hasVoted) => {
-      // Do not allow a user to vote
-      if (hasVoted) {
-        $('form').hide();
-      }
-      loader.hide();
-      content.show();
-    }).catch((error) => {
-      console.warn(error);
-    });
+            // Render candidate ballot option
+            let candidateOption = "<option value='" + id + "' >" + name + "</ option>";
+            candidatesSelect.append(candidateOption);
+          });
+        }
+        return meta.voters(App.account);
+      })
+      .then((hasVoted) => {
+        // Do not allow a user to vote
+        if (hasVoted) {
+          $("form").hide();
+        }
+        loader.hide();
+        content.show();
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
   },
 
   castVote: () => {
-    let candidateId = $('#candidatesSelect').val();
+    let candidateId = $("#candidatesSelect").val();
     $("#content").hide();
     $("#loader").show();
 
-    App.contracts.Election.deployed().then((instance) => {
-      return instance.vote(candidateId, { from: App.account });
-    }).then((result) => {
-      App.showAlert("Your vote has been submitted. ", "success");
-    }).catch((err) => {
-      const message = err.message.split(":")[1].trim();
-      App.showAlert(message, "error");
-    }).finally(() => {
-      $("#loader").hide();
-      $("#content").show();
-    })
+    App.contracts.Election.deployed()
+      .then((instance) => {
+        return instance.vote(candidateId, { from: App.account });
+      })
+      .then((result) => {
+        App.showAlert("Your vote has been submitted. ", "success");
+      })
+      .catch((err) => {
+        const message = err.message.split(":")[1].trim();
+        App.showAlert(message, "error");
+      })
+      .finally(() => {
+        $("#loader").hide();
+        $("#content").show();
+      });
   },
 
   showAlert: (message, type = "success" | "error" | "default", timer = 3000) => {
@@ -153,7 +166,7 @@ App = {
         setTimeout(() => {
           errorAlertEl.hide();
         }, timer);
-        break
+        break;
       default:
         defaultAlertEl.text(message).show();
         setTimeout(() => {
@@ -165,7 +178,7 @@ App = {
 };
 
 $(() => {
-  $(window).on('load', () => {
-    App.init()
+  $(window).on("load", () => {
+    App.init();
   });
 });

@@ -16,18 +16,22 @@
     "migrate:rinkeby": "truffle migrate --network rinkeby --reset --compile-all",
     "migrate:goerli": "truffle migrate --network goerli --reset --compile-all",
     "migrate:alastria": "truffle migrate --network alastria --reset --compile-all",
-    "deploy:github": "sh deploy.sh",
-    "deploy:surge": "npm run build && surge dist/"
+    "deploy:surge": "npm run build && surge dist/",
+    "prettier-format": "prettier --config .prettierrc **/*.{js,css,html} --write",
+    "prepare": "husky install"
   },
   "author": "Padelis Theodosiou <padelis.theodosiou@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.0",
     "fs-extra": "^9.1.0",
+    "husky": "^5.1.3",
     "lite-server": "^2.3.0",
-    "mocha": "^8.3.0"
+    "mocha": "^8.3.0",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
+    "@truffle/hdwallet-provider": "^1.2.2",
     "dotenv": "^8.2.0",
     "truffle-hdwallet-provider": "^1.0.17"
   }
